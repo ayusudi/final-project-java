@@ -1,4 +1,4 @@
-# final-project-java
+# JavaGotchi 
 
 JavaGotchi is Tamagotchi Game in terminal interface created with Java.
 
