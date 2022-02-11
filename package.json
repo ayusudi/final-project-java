@@ -1,0 +1,16 @@
+{
+  "name": "javagotchi",
+  "version": "1.0.0",
+  "description": "Final Project of Course Java (ITP) February 2022.",
+  "main": "Main.java",
+  "scripts": {
+    "start": "java Main.java"
+  },
+  "keywords": [
+    "JOBA",
+    "Binus",
+    "Java"
+  ],
+  "author": "ayusudi",
+  "license": "ISC"
+}
