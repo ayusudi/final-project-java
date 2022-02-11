@@ -15,7 +15,7 @@ public class Main {
   static ArrayList<String> logs = new ArrayList<>();
   static int menu = 0;
   public static void main(String[] args) throws InterruptedException {
-    System.out.println("Welcome to JavaGotchi");
+    System.out.println("\nWelcome to JavaGotchi");
     System.out.println("- - - - - - - - - - -\n");
     System.out.print("Input your name     : ");
     ownerName = input.nextLine();
