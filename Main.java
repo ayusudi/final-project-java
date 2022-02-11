@@ -1,5 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Main {
   static Scanner input = new Scanner(System.in);
@@ -31,7 +34,7 @@ public class Main {
             sleep();
             break;
           case 2:
-            shower();
+            bath();
             break;
           case 3:
             eat();
@@ -60,10 +63,10 @@ public class Main {
     int choosen = 0;
     System.out.println("Menu Game Javatchi");
     System.out.println("[1] Sleep");
-    System.out.println("[2] Shower");
+    System.out.println("[2] Bath");
     System.out.println("[3] Eat");
     System.out.println("[4] Play");
-    System.out.println("[5] Admire");
+    System.out.println("[5] Logs");
     System.out.println("[6] Exit");
     System.out.print("> ");
     choosen = Integer.parseInt(input.nextLine());
@@ -114,27 +117,19 @@ public class Main {
     clear();
   }
 
-  // MENU 2 SHOWER
-  public static void shower() {
-    logs.add("Shower");
+  // MENU 2 Bath
+  public static void bath() throws IOException {
+    logs.add("Bath");
     cleanliness = 100;
     if (energy > 50 && energy <= 100)
       energy -= 5;
     if (mood > 50)
       mood -= 10;
-    switch (evaluation) {
-      case 0:
-        // Kid
-        break;
-      case 1:
-        // Teen
-        break;
-      case 2:
-        // Adult
-        break;
-    }
-    System.out.print("> Enter to finish shower ");
+    String content = new String(Files.readAllBytes(Paths.get("text.txt")));
+    System.out.println(content);
+    System.out.print("> Enter to finish bath ");
     input.nextLine();
+    clear();
   }
 
   // MENU 3 EAT
@@ -189,6 +184,7 @@ public class Main {
       System.out.print("> Enter to close INFO ");
       input.nextLine();
     }
+    clear();
   }
 
   // MENU 5
@@ -201,7 +197,7 @@ public class Main {
     showPetBye();
     System.out.println("\nTo   : " + ownerName);
     System.out.println("From : " + petName);
-    System.out.println("Thank you for your care, good bye..");
+    System.out.println("Thank you for your care, good bye..\n");
   }
 
   // OTHERS
@@ -280,4 +276,5 @@ public class Main {
     System.out.print("\033[H\033[2J");
     System.out.flush();
   }
+
 }

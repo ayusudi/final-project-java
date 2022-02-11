@@ -42,3 +42,36 @@ System.out.println("| >   <  | HAMBURGER~");
 System.out.println("|  E🍔Ǝ  |");
 System.out.println("⎣________/");
 
+
+o    .   _     .
+.     (_)         o
+o                _       o
+_   .   o  (_)   .
+(_)    O             _
+o           ,_ ,  o   o    (_)
+. o     .  ,        o
+o8o/        ,oO8/( -TT
+o8o8O          \Oo8OOo8Oo||     O
+Oo(""o8"""""""""""""""8oo""""""")
+_   `\`'                  `'   /'   o
+(_)    \                       /    _   .
+O  \           _         /    (_)
+o   .     `-. .----<(o)_--. .-'
+--------(_/------(_<_/--\_)--------
+
+
+System.out.println("o    .   _     .");
+System.out.println(".     (_)         o");
+System.out.println("o                   _       o");
+System.out.println("_   ,  .   o  (_)   .");
+System.out.println("(_)    O             _");
+System.out.println("o           ,_ ,  o   o    (_)");
+System.out.println(". o     .  ,        o");
+System.out.println("o8o/        ,oO8/( -TT");
+System.out.println("o8o8O          \Oo8OOo8Oo||     O");
+System.out.println("Oo(""o8"""""""""""""""8oo""""""")");
+System.out.println("_   `\`'                  `'   /'   o");
+System.out.println("(_)    \                       /    _   .");
+System.out.println("O  \           _         /    (_)");
+System.out.println("o   .     `-. .----<(o)_--. .-'");
+System.out.println("--------(_/------(_<_/--\_)--------hjw");
