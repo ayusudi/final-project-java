@@ -52,9 +52,9 @@ public class Main {
     } catch (Exception e) {
       System.out.println("ERROR");
       System.out.println(e);
-    } 
+    }
   }
-  
+
   // MENU
   public static int showAndChooseMenu() throws InterruptedException {
     int choosen = 0;
@@ -62,19 +62,14 @@ public class Main {
     System.out.println("[1] Sleep");
     System.out.println("[2] Shower");
     System.out.println("[3] Eat");
-    if (evaluation < 2) {
-      System.out.println("[4] Play");
-    } else {
-      System.out.println("[4] Work");
-      System.out.println("Your pet is an adult (he/she are available to go work)");
-    }
+    System.out.println("[4] Play");
     System.out.println("[5] Admire");
     System.out.println("[6] Exit");
     System.out.print("> ");
     choosen = Integer.parseInt(input.nextLine());
     System.out.print("LOADING ");
     for (int i = 0; i < 5; i++) {
-      Thread.sleep(500);
+      Thread.sleep(250);
       System.out.print(" . ");
     }
     System.out.println();
@@ -85,6 +80,11 @@ public class Main {
   public static void sleep() throws InterruptedException {
     System.out.print("Input duration of sleep : ");
     int duration = Integer.parseInt(input.nextLine());
+    System.out.println("  ____");
+    System.out.println(" ( ._.)");
+    System.out.println(" _| ⊃/(_____");
+    System.out.println("/  └-(_____/");
+    System.out.println("￣￣￣￣￣￣");
     System.out.println("\nINFO : you're not allowed awake your pet while he/she sleeping under the set duration.\n");
     System.out.print("> Enter to close INFO ");
     input.nextLine();
@@ -95,27 +95,23 @@ public class Main {
       energy += 25;
     else
       energy += 10;
+    System.out.println("      Z z z . .");
+    System.out.println("  __/ヽ-､__");
+    System.out.println("/⌈_/_____/");
+    System.out.println("￣￣￣￣￣");
     do {
-      switch (evaluation) {
-        case 0:
-          // Kid
-          break;
-        case 1:
-          // Teen
-          break;
-        case 2:
-          // Adult
-          break;
-      }
-      count++;
       Thread.sleep(1000);
-      if (count == 1) {
-        System.out.println(petName + " has been sleep for a hour");
-      } else {
-        System.out.println(petName + " has been sleep for " + count + " hour");
-      }
+      clear();
+      count++;
+      System.out.println("      Z z z . .");
+      System.out.println("  __/ヽ-､__");
+      System.out.println("/⌈_/_____/");
+      System.out.println("￣￣￣￣￣");
+      System.out.println(petName + " has been sleep for " + count + " hour/s");
     } while (count < duration);
-    System.out.print("> Enter to awake your pet ");
+    System.out.print("\n> Enter to awake your pet ");
+    input.nextLine();
+    clear();
   }
 
   // MENU 2 SHOWER
@@ -149,16 +145,26 @@ public class Main {
       mood = 50;
     switch (evaluation) {
       case 0:
-        // Kid
+        System.out.println(" _______");
+        System.out.println("/ .   . ⎤");
+        System.out.println("|  🍼C  |");
+        System.out.println("⎣_______/");
         break;
       case 1:
-        // Teen
+        System.out.println(" ________");
+        System.out.println("/ o   o  ⎤ NYAM NYAM CAKE");
+        System.out.println("| -🍰-   |");
+        System.out.println("⎣________/");
         break;
       case 2:
-        // Adult
+        System.out.println(" _______");
+        System.out.println("/        ⎤");
+        System.out.println("| >   <  | HAMBURGER~");
+        System.out.println("|  E🍔Ǝ  |");
+        System.out.println("⎣________/");
         break;
     }
-    System.out.print("> Enter to finish eating ");
+    System.out.print("\n> Enter to finish eating ");
     input.nextLine();
     if (cleanliness > 50) {
       cleanliness = 20;
@@ -167,84 +173,99 @@ public class Main {
       System.out.print("> Enter to close INFO ");
       input.nextLine();
     }
-    ;
-
+    clear();
   }
 
   // MENU 4 PLAY / WORK
   public static void activity() {
-    String action = "";
-    if (evaluation == 2) {
-      action = "Work";
-      energy -= 20;
-      if (mood > 50)
-        mood -= 10;
-      else
-        mood = 10;
-      System.out.println(); // Adult
-      System.out.print("> Enter to finish work and go home ");
-    } else {
-      action = "Play";
-      energy -= 10;
-      mood = 100;
-      switch (evaluation) {
-        case 0:
-          // Kid
-          break;
-        case 1:
-          // Teen
-          break;
-      }
-      logs.add(action);
-      System.out.print("> Enter to finish play ");
-    }
+    energy -= 10;
+    mood = 100;
+    logs.add("Play");
+    System.out.print("> Enter to finish play ");
     if (energy < 0) {
       energy = 0;
-      System.out
-          .println("\nINFO : Your pet (" + petName + ") is passed out due to over-" + action.toLowerCase() + ".. \n");
+      System.out.println("\nINFO : Your pet (" + petName + ") is passed out due to over-play.. \n");
       logs.add("Pass Out");
       System.out.print("> Enter to close INFO ");
       input.nextLine();
     }
   }
 
-  // MENU 5 
-  public static void showLog(){
+  // MENU 5
+  public static void showLog() {
 
   }
 
   // MENU 6 EXIT
   public static void exitMessage() {
+    showPetBye();
     System.out.println("\nTo   : " + ownerName);
     System.out.println("From : " + petName);
     System.out.println("Thank you for your care, good bye..");
-    showPet();
   }
 
   // OTHERS
   public static void information() {
 
   }
+
   public static void showStatus() {
 
   }
-  public static void showPet() {
+
+  public static void showPetBye() {
+    System.out.println();
     switch (evaluation) {
       case 0: // KID
-        System.out.println("\n _______");
-        System.out.println("/ .   . ⎤");
-        System.out.println("|   O   |");
-        System.out.println("⎣_______/\n");
+        System.out.println(" _______");
+        System.out.println("/ TT TT ⎤  HUAA ");
+        System.out.println("|   O   |      HUAAA");
+        System.out.println("⎣_______/");
         break;
-      case 1: // Teen
-        
+      case 1: // TEEN
+        System.out.println(" ________");
+        System.out.println("/ TT  TT ⎤  HIKSS");
+        System.out.println("|   m    |");
+        System.out.println("⎣________/");
         break;
-      case 2:
-        // Adult
+      case 2: // ADULT
+        System.out.println(" ________");
+        System.out.println("/        ⎤");
+        System.out.println("| TT  TT |  BYE");
+        System.out.println("|   _    |");
+        System.out.println("⎣________/");
         break;
     }
+    System.out.println();
   }
-  public static void tryToEvolve(){
+
+  public static void showPet() {
+    System.out.println();
+    switch (evaluation) {
+      case 0: // KID
+        System.out.println(" _______");
+        System.out.println("/ .   . ⎤");
+        System.out.println("|   O   |");
+        System.out.println("⎣_______/");
+        break;
+      case 1: // TEEN
+        System.out.println(" ________");
+        System.out.println("/ o   o  ⎤");
+        System.out.println("|   m    |");
+        System.out.println("⎣________/");
+        break;
+      case 2: // ADULT
+        System.out.println(" ________");
+        System.out.println("/        ⎤");
+        System.out.println("| 0   0  |");
+        System.out.println("|   _    |");
+        System.out.println("⎣________/");
+        break;
+    }
+    System.out.println();
+  }
+
+  public static void tryToEvolve() {
     int totalLog = logs.size();
     if (totalLog < 5) {
       evaluation = 0;
@@ -254,7 +275,8 @@ public class Main {
       evaluation = 2;
     }
   }
-  public static void clear(){
+
+  public static void clear() {
     System.out.print("\033[H\033[2J");
     System.out.flush();
   }
