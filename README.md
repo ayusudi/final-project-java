@@ -18,3 +18,21 @@ ________                    ___________
 
 ### Slide 
 [Link TBA]()
+
+
+### Detail 
+```json
+{
+  "name": "javagotchi",
+  "version": "1.0.0",
+  "description": "Final Project of Course Java (ITP) February 2022.",
+  "main": "Main.java",
+  "keywords": [
+    "JOBA",
+    "Binus",
+    "Java"
+  ],
+  "author": "ayusudi",
+  "license": "ISC"
+}
+```
