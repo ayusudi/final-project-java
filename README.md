@@ -19,6 +19,8 @@ ________                    ___________
 ### Slide 
 [Link TBA]()
 
+### Repl 
+https://replit.com/@AyuSudi/JavaGotchi
 
 ### Detail 
 ```json

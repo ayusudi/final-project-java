@@ -14,7 +14,7 @@ public class Main {
   static int cleanliness = 0;
   static ArrayList<String> logs = new ArrayList<>();
   static int menu = 0;
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     System.out.println("Welcome to JavaGotchi");
     System.out.println("- - - - - - - - - - -\n");
     System.out.print("Input your name     : ");
@@ -42,8 +42,15 @@ public class Main {
           default: throw new Exception(errorMsg);
         }
       } catch (Exception e) {
-        System.out.println("ERROR");
+        System.out.println("\nERROR");
         System.out.println(e);
+        System.out.print("RELOADING ");
+        for (int i = 0; i < 5; i++) {
+          Thread.sleep(250);
+          System.out.print(" . ");
+        }
+        System.out.println();
+        clear();
       }
     } while (menu != 6);
   }
@@ -103,6 +110,7 @@ public class Main {
       System.out.println("￣￣￣￣￣");
       System.out.println(petName + " has been sleep for " + count + " hour/s");
     } while (count < duration);
+    logs.add("Sleep");
     System.out.print("\n> Enter to awake your pet ");
     input.nextLine();
     clear();
